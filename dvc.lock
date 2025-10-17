@@ -1,0 +1,27 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python src/train.py --data data/house_data.csv --model_out models/house_model.pkl
+      --metrics_out metrics.json
+    deps:
+    - path: data/house_data.csv
+      hash: md5
+      md5: 862ce971c086da8903e8ecc7c8a52c92
+      size: 49522076
+    - path: params.yaml
+      hash: md5
+      md5: 68561da16d026d0eb44b2161b7c1b76e
+      size: 215
+    - path: src/train.py
+      hash: md5
+      md5: 82d555fb41024a60b5dafd2fb9126db2
+      size: 2165
+    outs:
+    - path: metrics.json
+      hash: md5
+      md5: 38b5a91b36e670635667d702fe635ab3
+      size: 71
+    - path: models/house_model.pkl
+      hash: md5
+      md5: 3220c40e3edd7dd4b13d23281e2c67b3
+      size: 18871649

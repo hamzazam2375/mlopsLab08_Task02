@@ -1,0 +1,6 @@
+[core]
+    remote = localstore
+['remote "local_storage"']
+    url = D:/dvc_storage
+['remote "localstore"']
+    url = D:\MLOps\23L-0945_Lab08\mlopsLab08_Task02
