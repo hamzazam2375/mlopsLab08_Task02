@@ -34,6 +34,11 @@ if __name__ == "__main__":
     X = df.drop(columns=["price"], errors="ignore")
     y = df["price"] if "price" in df.columns else df.iloc[:, -1]
 
+    # Save feature names for Flask app
+    os.makedirs("models", exist_ok=True)
+    import pickle
+    pickle.dump(list(X.columns), open("models/model_features.pkl", "wb"))
+
     # Split data
     X_train, X_test, y_train, y_test = train_test_split(
         X, y,
